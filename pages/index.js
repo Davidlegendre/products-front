@@ -10,7 +10,7 @@ export default function Home({isUser}) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
   try {
     cookie.parse(context.req.headers.cookie);
     return {props: {isUser: true}}
